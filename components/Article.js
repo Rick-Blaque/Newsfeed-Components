@@ -146,7 +146,7 @@ artical.append(div)
 
 span.addEventListener('click', () => {
   if(div){
-    div.className.toggle = 'article-open'
+    div.className.toggle('article-open', true)
   }
 })
   return div
