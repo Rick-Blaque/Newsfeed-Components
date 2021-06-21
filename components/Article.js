@@ -126,36 +126,40 @@ let ptag3 = document.createElement('p')
 let span = document.createElement('span')
 
 //span.className = 'expandButton'
-//div.className = 'article'
-div.className = 'article-open'
-para.className = 'date'
+div.className = 'article'
+//div.classList.add('article-open')
+//div.className = 'article-open')
+para.className ='date'
 span.className = 'expandButton'
-div.appendChild(h2)
-div.appendChild(para)
-div.appendChild(ptag1)
-div.appendChild(ptag2)
-div.appendChild(ptag3)
-div.appendChild(span)
+div.append(h2)
+div.append(para)
+div.append(ptag1)
+div.append(ptag2)
+div.append(ptag3)
+div.append(span)
 
 h2.innerHTML = obj.title
 para.innerHTML = obj.date
 ptag1.innerHTML = obj.firstParagraph
 ptag2.innerHTML = obj.secondParagraph
 ptag3.innerHTML = obj.thirdParagraph
+
+
+let artical = document.querySelector('.articles')
 artical.append(div)
 
-span.addEventListener('click', () => {
-  if(div){
-    div.className.toggle('article-open', true)
-  }
+artical.addEventListener('click', () => {
+  
+    div.classList.toggle('article-open')
+  
 })
   return div
 }
 
-let artical = document.querySelector('body')
+let artical = document.querySelector('.articles')
 data.forEach(i => {
-  let lay =  articleMaker(i)
-  artical.append(lay)
+  let layoutInfo =  articleMaker(i)
+  artical.append(layoutInfo)
   
 })
 

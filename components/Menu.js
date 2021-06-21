@@ -20,6 +20,8 @@ let menuItems = [
 
   The 'menuMaker' takes an array of menu items as its only argument.
 
+  
+
   Step 2: Inside the function, iterate over the array creating a list item <li> element for each item in the array.
   Add those items to the <ul>
 
@@ -34,7 +36,7 @@ let menuItems = [
 function menuMaker(arr) {
   let div = document.createElement('div')
   let ul = document.createElement('ul')
-  div.classList.add = 'menu'
+  div.className = 'menu'
 
   arr.forEach(e => {
     let li = document.createElement('li')
@@ -42,9 +44,9 @@ function menuMaker(arr) {
     ul.appendChild(li)
   });
   div.appendChild(ul)
-  let menu = document.querySelector('.menu-button')
+  let menu = document.querySelector('.header')
   menu.addEventListener('click', () => {
-    div.classList.toggle('menu--open', true)
+    div.classList.toggle('menu--open')
   })
 
   return div
